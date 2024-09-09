@@ -1,0 +1,100 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        #image{
+          height: 10rem;
+          border: 5px solid #ddd;
+          border-radius: 100%;
+        }
+        .header {
+            background-image:url("/css/cover.jpg");
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            height: 14rem;
+        }
+        .nav {
+             display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 10px;
+        }
+        .nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+         #bars{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+          height: 25px;
+          margin-top: 2px;
+          background-size: cover;
+        }
+                #options{
+          
+          position:absolute;
+          right:0;
+          text-decoration:none;
+          display: flex;
+          float:right;
+          display: inline;
+          border: 1px solid black;
+          background-color:#00509e ;
+          width: 15rem;
+        
+          z-index: 1;
+        text-align: center;
+        display: none;
+          
+          
+  
+        }
+                ul li{
+          list-style: none;
+          margin: 1rem;
+          
+        }
+        div a {
+          text-decoration: none;
+          color: white;
+          font-size: 1rem;
+          
+        }
+        div hr {
+          border: 1px solid black;
+          padding: 0rem;
+          margin: 1rem;
+          
+        }
+        
+        
+        nav a:hover {
+            background-color: #003366;
+        }
+        nav a:active {
+          background-color: #003366
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+        .content h2 {
+            color: #004f9e;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }

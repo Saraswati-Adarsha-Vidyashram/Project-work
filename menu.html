@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #0044cc;
+    color: white;
+    font-size: 20px;
+}
+
+.menu-title {
+    font-weight: bold;
+}
+
+.login {
+    font-size: 16px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.menu-list {
+    list-style-type: none;
+}
+
+.menu-list li {
+    margin: 10px 0;
+}
+
+.menu-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.menu-list img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.menu-list span {
+    color: gray;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content img {
+    width: 60px;
+    height: 60px;
+}
+
+.product-info {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.product-info p {
+    margin: 2px 0;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.contact {
+    background-color: #f0f0f0;
+}
+
+.like {
+    background-color: #3b5998;
+    color: white;
+}
+
+.follow {
+    background-color: #e1306c;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-list a {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="menu-title">Menu</div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul class="menu-list">
+            <li><a href="online"><img src="/icons/video-solid.svg" alt="Online class">
+            Online class <span>Join Online Class</span> </a></li>
+            <li><a href="chat..html"><img src="/icons/message-solid.svg" alt=""> Chat Room <span>Chat with others</span></a></li>
+            <li><a href="feedback.html"><img src="/icons/comment-regular.svg" alt="feedback"> feedback</a></li>
+            <li><a href="contact.html"><img src="/icons/address-card-regular.svg" alt="Contact">Contact Us</a></li>
+            <li><a href="about us.html"><img src="/icons/address-book-solid.svg" alt="About Us"> About Us<br><span>Contact, Location and Other Detail</span></a></li>
+
+        </ul>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+  
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts.js"></script>
+    <script>
+    document.querySelector(".menu-title").addEventListener("click", function() {
+    document.querySelector(".sidebar").classList.toggle("open");
+});
+</script>
+</body>
+</html>
