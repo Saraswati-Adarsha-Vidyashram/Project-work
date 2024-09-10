@@ -14,7 +14,7 @@ body {
           border-radius: 100%;
         }
         .header {
-            background-image:url("/css/cover.jpg");
+            background-image:url("cover.jpg");
             background-size: cover;
             color: white;
             padding: 20px;
