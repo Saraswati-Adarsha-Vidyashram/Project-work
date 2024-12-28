@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal News</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .news-item {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .news-item:last-child {
+      border-bottom: none;
+    }
+    .news-title {
+      font-size: 18px;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .news-title:hover {
+      text-decoration: underline;
+    }
+    .news-description {
+      font-size: 14px;
+      color: #555;
+    }
+    .news-meta {
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SAV News</h1>
+  </header>
+  <div class="container" id="news-container">
+    <p>Loading news...</p>
+  </div>
+  <script>
+    // API Key and URL
+    const apiKey = "61c9b39e5ed449048c7258708e774c11";
+    const apiURL = `https://newsapi.org/v2/everything?q=Nepal&from=2024-11-28&sortBy=publishedAt&apiKey=${apiKey}`;
+
+    // Function to fetch news
+    async function fetchNews() {
+      try {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+
+        // Check if news articles exist
+        if (data.articles && data.articles.length > 0) {
+          const newsContainer = document.getElementById('news-container');
+          newsContainer.innerHTML = ""; // Clear loader
+
+          // Display each news article
+          data.articles.forEach(article => {
+            const newsItem = document.createElement('div');
+            newsItem.className = 'news-item';
+
+            newsItem.innerHTML = `
+              <a href="${article.url}" class="news-title" target="_blank">${article.title}</a>
+              <p class="news-description">${article.description || "No description available."}</p>
+              <p class="news-meta">Published on: ${new Date(article.publishedAt).toLocaleString()}</p>
+            `;
+            newsContainer.appendChild(newsItem);
+          });
+        } else {
+          document.getElementById('news-container').innerHTML = "<p>No news articles found.</p>";
+        }
+      } catch (error) {
+        document.getElementById('news-container').innerHTML = `<p>Error fetching news: ${error.message}</p>`;
+      }
+    }
+
+    // Fetch news on page load
+    window.onload = fetchNews;
+  </script>
+</body>
+</html>
